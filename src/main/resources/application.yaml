@@ -1,0 +1,34 @@
+spring:
+  # datablase
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+      hibernate.use_sql_comments: true
+
+
+
+  # devtools
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+    #freemaker
+    freemarker:
+      cache: false
+      #thymeleaf
+    thymeleaf:
+      cache: false
+      #부트스트랩 적용했을때 속도가빠르고 서버재시작 안해도 되고 새로고침만 하면 적용이 된다.
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace

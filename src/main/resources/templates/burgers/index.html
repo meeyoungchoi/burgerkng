@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><!-- th로 타임리프를 사용할수 있다 -->
+
+  <head>
+    <meta charset="UTF-8">
+    <title>burgers/index.html</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">버거<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" th:href="@{/ingredients}">재료</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">임시</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>버거 목록</h1>
+        <a href="/burgers/new" class="btn btn-primary">추가하기</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--반복문연습 숙제:음료, 아이스크림 -->
+          <tr th:each="burger: ${burgers}"><!--반복문을 돌린다 -->
+            <td th:text="${burger.id}">1</td>
+            <td>
+              <a th:href="@{/burgers/{id} (id = ${burger.id})}" th:text="${burger.name}">와퍼</a>
+            </td>
+            <td th:text="${burger.price}">5900</td>
+            <td>
+              <a th:href="@{burgers/edit/{id}(id = ${burger.id})}" class="btn btn-info">수정</a>
+            </td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>와퍼</td>
+            <td>5900</td>
+            <td>
+              <a href="/burgers/edit" class="btn btn-info">수정</a>
+            </td>
+
+          </tr>
+        </tbody>
+
+
+      </table>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+  </body>
+</html>
