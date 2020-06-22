@@ -69,4 +69,11 @@ public class IngeridientController {
         log.info(id + "번 삭제완료");
         return "redirect:/ingredients";
     }
+
+    @GetMapping("/ingredients/show/{id}")
+    public String show(@PathVariable Integer id, Model model) {
+        Ingredient ingredient = ingredientRepository.findById(id).orElse(null);
+        model.addAttribute("ingredient", ingredient);
+        return "/ingredients/show";
+    }
 }

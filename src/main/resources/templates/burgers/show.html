@@ -26,8 +26,8 @@ li {
       <h1 th:text="${burger.name}"></h1>
       <hr>
       <p th:text="|가격: ${burger.price}|"></p>
-      <p th:each="ingredient: ${burger.ingredients}" th:text="${ingredient.name}"></p><!--?-->
-      재료:<p  th:each="ingredient: ${burger.ingredients}" th:text="${ingredient.name}"></p>
+      <p th:each="ingredient1: ${burger.ingredients}" th:text="${ingredient1.name}"></p><!--?-->
+      재료:<p  th:each="ingredient1: ${burger.ingredients}" th:text="${ingredient1.name}"></p>
 
     </div>
 

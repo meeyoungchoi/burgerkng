@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>재료상세페이지</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Show Ingredient</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <p th:text="|이름: ${ingredient.name}|"></p>
+        <p th:text="|가격: ${ingredient.price}|"></p>
+      </div>
+
+  </body>
+</html>

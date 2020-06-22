@@ -39,6 +39,8 @@ public class BurgerController {
         return "burgers/index";
     }
 
+
+
     @GetMapping("/burgers/new")
     public String burgerForm(Model model) {
 
